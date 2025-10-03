@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plano de Gestão de Acesso do Profissional Terceiro</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #0d4f8c 0%, #1e6bb8 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.8em;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.3em;
+        opacity: 0.9;
+      }
+
+      .logo-section {
+        background: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 3px solid #0d4f8c;
+      }
+
+      .logo-section h2 {
+        color: #0d4f8c;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .logo-section p {
+        color: #666;
+        font-style: italic;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        border-left: 4px solid #0d4f8c;
+        padding-left: 20px;
+      }
+
+      .section h2 {
+        color: #0d4f8c;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .section h3 {
+        color: #1e6bb8;
+        font-size: 1.4em;
+        margin: 20px 0 10px 0;
+      }
+
+      .problem-statement {
+        background: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+
+      .problem-statement h3 {
+        color: #856404;
+        margin-bottom: 15px;
+      }
+
+      .solution-box {
+        background: #d1ecf1;
+        border: 2px solid #bee5eb;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 20px 0;
+      }
+
+      .solution-box h3 {
+        color: #0c5460;
+        margin-bottom: 15px;
+      }
+
+      .key-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #0d4f8c 0%, #1e6bb8 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-card h4 {
+        margin-bottom: 12px;
+        font-size: 1.3em;
+      }
+
+      .timeline {
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .timeline-item {
+        padding: 20px 0 20px 40px;
+        border-left: 3px solid #0d4f8c;
+        margin-left: 20px;
+        position: relative;
+        background: #f8f9fa;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        padding-left: 50px;
+      }
+
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 25px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #0d4f8c;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #0d4f8c;
+      }
+
+      .timeline-item strong {
+        color: #0d4f8c;
+        display: block;
+        font-size: 1.1em;
+        margin-bottom: 8px;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .benefit-card {
+        background: #e8f5e8;
+        border: 2px solid #28a745;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .benefit-card h4 {
+        color: #155724;
+        margin-bottom: 10px;
+      }
+
+      .benefit-card .metric {
+        font-size: 2em;
+        font-weight: bold;
+        color: #28a745;
+        display: block;
+      }
+
+      .risk-mitigation {
+        background: #f8d7da;
+        border: 2px solid #dc3545;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .risk-mitigation h4 {
+        color: #721c24;
+        margin-bottom: 10px;
+      }
+
+      .investment-breakdown {
+        background: #e7f3ff;
+        border: 2px solid #0066cc;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 20px 0;
+      }
+
+      .investment-breakdown h4 {
+        color: #003d7a;
+        margin-bottom: 15px;
+      }
+
+      .cost-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #cce7ff;
+      }
+
+      .cost-item:last-child {
+        border-bottom: none;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .success-metrics {
+        background: #fff2e6;
+        border: 2px solid #ff8c00;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .success-metrics h4 {
+        color: #cc5500;
+        margin-bottom: 15px;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .kpi-item {
+        text-align: center;
+        padding: 15px;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid #ffcc99;
+      }
+
+      .kpi-item strong {
+        display: block;
+        color: #cc5500;
+        font-size: 1.1em;
+      }
+
+      ul {
+        margin: 15px 0 15px 25px;
+      }
+
+      ul li {
+        margin: 8px 0;
+        padding-left: 10px;
+      }
+
+      ol {
+        margin: 15px 0 15px 25px;
+      }
+
+      ol li {
+        margin: 12px 0;
+        padding-left: 5px;
+      }
+
+      .highlight-box {
+        background: #d4edda;
+        border-left: 5px solid #28a745;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+
+      .highlight-box strong {
+        color: #155724;
+      }
+
+      .executive-summary {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border: 3px solid #0d4f8c;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .executive-summary h3 {
+        color: #0d4f8c;
+        margin-bottom: 20px;
+        font-size: 1.6em;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .cta-section h3 {
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-section">
+        <h2>AGIR</h2>
+        <p>Associação de Gestão, Inovação e Resultados em Saúde</p>
+      </div>
+
+      <header>
+        <h1>Plano de Transformação Digital</h1>
+        <p>
+          Sistema de Gestão de Contratos e Controle de Jornada de Acesso
+          Profissionais Terceirizados
+        </p>
+      </header>
+
+      <div class="content">
+        <div class="executive-summary">
+          <h3>🎯 Sumário Executivo</h3>
+          <p>
+            Este plano propõe a implementação de uma solução web para modernizar
+            o controle de jornada de acesso e gestão de contratos de
+            profissionais terceirizados, aproveitando a infraestrutura de
+            catracas com reconhecimento facial já existente. O projeto
+            representa um investimento estratégico em eficiência operacional,
+            transparência e compliance regulatório. Vai além da simples gestão
+            de acesso, uma vez que o fluxo de toda a jornada de acessos será
+            avaliada.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>📊 Situação Atual e Desafios</h2>
+
+          <div class="solution-box">
+            <h3>🏗️ Infraestrutura Atual</h3>
+            <p>
+              A Agir possui uma base tecnológica robusta que será aproveitada na
+              transformação:
+            </p>
+            <ul>
+              <li>
+                <strong>Sistema Suricato:</strong> Software de controle de
+                acesso que gerencia permissões e integra com catracas
+              </li>
+              <li>
+                <strong>RM (Recursos Humanos):</strong> Sistema com cadastros
+                completos e biometria facial de colaboradores celetistas
+              </li>
+              <li>
+                <strong>MV Portaria:</strong> Sistema com dados e biometria de
+                pacientes
+              </li>
+              <li>
+                <strong>Catracas Biométricas:</strong> Hardware de
+                reconhecimento facial instalado e operacional
+              </li>
+              <li>
+                <strong>Big Data:</strong> Mais de 14 milhões de registros
+                históricos de acesso
+              </li>
+            </ul>
+          </div>
+
+          <div class="problem-statement">
+            <h3>⚠️ Lacunas e desafios Identificados</h3>
+            <p>
+              Apesar da infraestrutura existente, a Agir enfrenta desafios
+              específicos na gestão de profissionais terceirizados que requerem
+              solução dedicada:
+            </p>
+            <ul>
+              <li>
+                <strong>Controle Manual de Jornada:</strong> Ausência de sistema
+                automatizado para monitoramento de horas trabalhadas
+              </li>
+              <li>
+                <strong>Múltiplos Tipos de Contrato:</strong> Gestão complexa de
+                contratos por hora, diária e mensal sem padronização
+              </li>
+              <li>
+                <strong>Integração Limitada:</strong> Sistema Suricato focado em
+                controle de acesso, mas sem módulo específico para gestão de
+                contratos de terceirizados
+              </li>
+              <li>
+                <strong>Profissionais Multi-contratos:</strong> Mesmo CPF
+                vinculado a múltiplos contratos simultâneos sem controle
+                adequado
+              </li>
+              <li>
+                <strong>Falta de Transparência:</strong> Dificuldade na
+                auditoria e prestação de contas sobre custos com terceirizados
+              </li>
+              <li>
+                <strong>Compliance Regulatório:</strong> Riscos relacionados ao
+                cumprimento da legislação trabalhista.
+              </li>
+            </ul>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Vantagem Competitiva:</strong> A infraestrutura já existente
+            oferece uma base consistente:
+            <ul>
+              <li>
+                <strong>Hardware:</strong> Catracas com reconhecimento facial
+                funcionais
+              </li>
+              <li>
+                <strong>Software:</strong> Sistema Suricato para controle de
+                acesso
+              </li>
+              <li>
+                <strong>Dados:</strong> RM com cadastros e biometria facial de
+                colaboradores
+              </li>
+              <li>
+                <strong>MV Portaria:</strong> Sistema com dados e biometria de
+                pacientes
+              </li>
+              <li>
+                <strong>Histórico:</strong> Mais de 14 milhões de registros de
+                acesso
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>💡 Solução Proposta</h2>
+
+          <div class="solution-box">
+            <h3>🚀 Sistema Web de Gestão Integrada</h3>
+            <p>
+              Desenvolvimento de uma aplicação web completa que integre o
+              controle de acesso existente com um sistema de gestão de contratos
+              e jornada de acesso no trabalho.
+            </p>
+          </div>
+
+          <h3>Funcionalidades Principais</h3>
+          <div class="key-features">
+            <div class="feature-card">
+              <h4>🔐 Integração com Suricato</h4>
+              <p>
+                Expansão do sistema Suricato existente com APIs para captura de
+                dados de entrada/saída e sincronização com RM para profissionais
+                terceirizados
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>📋 Gestão de Contratos</h4>
+              <p>
+                Cadastro e gestão de contratos por hora, diária e mensal com
+                regras específicas para cada modalidade
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>👤 Gestão de Profissionais</h4>
+              <p>
+                Cadastro único por CPF com suporte a múltiplos contratos
+                simultâneos e histórico completo
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>⏱️ Controle de Jornada</h4>
+              <p>
+                Registro automático de horas trabalhadas com cálculo de valores
+                baseado no tipo de contrato
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>📊 Dashboard Gerencial</h4>
+              <p>
+                Painéis de controle com métricas em tempo real, relatórios e
+                indicadores de performance
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>📄 Relatórios e Auditoria</h4>
+              <p>
+                Relatórios detalhados para auditoria, compliance e tomada de
+                decisões estratégicas
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>🔔 Alertas e Notificações</h4>
+              <p>
+                Sistema de alertas para irregularidades, vencimento de contratos
+                e limites de jornada
+              </p>
+            </div>
+            <div class="feature-card">
+              <h4>💰 Gestão Financeira</h4>
+              <p>
+                Cálculo automático de valores a pagar baseado nas horas
+                trabalhadas e tipos de contrato
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>👥 Estrutura de Governança e Comitês Responsáveis</h2>
+
+          <div class="solution-box">
+            <h3>🏛️ Comitê Executivo de Transformação Digital</h3>
+            <p>
+              <strong>Responsabilidade:</strong> Governança estratégica,
+              aprovações orçamentárias e direcionamento geral do projeto
+            </p>
+            <ul>
+              <li>
+                <strong>Superintendente Executivo da Agir</strong> - Sponsor
+                Executivo
+              </li>
+              <li>
+                <strong>Diretor de TI</strong> - Infraestrutura, desenvolvimento
+                e segurança
+              </li>
+
+              <li>
+                <strong>Diretor de Operações</strong> - Responsável por
+                possíveis mudanças operacionais
+              </li>
+
+              <li>
+                <strong>Diretoria de Recursos Humanos</strong> - Gestão quanto à
+                regularidades trabalhistas
+              </li>
+              <li>
+                <strong>Gerência de Contratos</strong> - Gestão de mudança
+                organizacional quanto á possibilidade de glosas
+              </li>
+            </ul>
+            <p>
+              <strong>Frequência de Reuniões:</strong> Quinzenal durante
+              implementação, mensal pós go-live
+            </p>
+          </div>
+
+          <div class="key-features">
+            <div class="feature-card">
+              <h4>🔧 Comitê Técnico</h4>
+              <p>
+                <strong>Liderado por:</strong> Coordenador de Produtos Digitais
+              </p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>Analista Responsável pelo Desenvolvimento</li>
+              </ul>
+              <p style="margin-top: 10px">
+                <strong>Responsabilidade:</strong> Desenvolvimento, testes,
+                integração e manutenção técnica
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>👔 Comitê de Negócios</h4>
+              <p>
+                <strong>Setores:</strong>TI, RH, Contratos, Operações e
+                Logística, Financeiro, Jurídico
+              </p>
+              <p style="margin-top: 10px">
+                <strong>Responsabilidade:</strong> Definição de processos,
+                validação de regras de negócio e treinamentos
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>📊 Comitê de Qualidade e Compliance</h4>
+              <p>
+                <strong>Setores:</strong> Qualidade, Compliance, Jurídico,
+                Auditoria, Riscos
+              </p>
+              <p style="margin-top: 10px">
+                <strong>Responsabilidade:</strong> Conformidade regulatória,
+                auditoria e gestão de riscos
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>🎯 Comitê para Gestão de Mudança</h4>
+              <p><strong>Liderado por:</strong> Equipe Daher Lab</p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>Coordenar Treinamento</li>
+                <li>Comunicação Interna</li>
+                <li>Envolver supervisão de contratos</li>
+                <li>Promover engajamento</li>
+              </ul>
+              <p style="margin-top: 10px">
+                <strong>Responsabilidade:</strong> Adoção pelos usuários,
+                comunicação e suporte à mudança
+              </p>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>Estrutura de Reporting:</strong>
+            <ul>
+              <li>Comitê técnico reporta semanalmente ao Comitê Executivo</li>
+              <li>
+                Dashboard em tempo real com KPIs para todos os stakeholders
+              </li>
+              <li>Relatórios executivos mensais com métricas de progresso</li>
+              <li>Escalação automática de riscos e impedimentos críticos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🔗 Estratégia de Integração com Sistemas Existentes</h2>
+
+          <div class="key-features">
+            <div class="feature-card">
+              <h4>🔧 Integração com Suricato</h4>
+              <p>
+                <strong>Método:</strong> APIs RESTful para captura de eventos de
+                entrada/saída
+              </p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>Captura de logs de acesso em tempo real</li>
+                <li>Mapeamento de usuários entre Suricato e novo sistema</li>
+                <li>Preservação de regras de permissão existentes</li>
+                <li>Backup e migração dos 14+ milhões de registros</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h4>👥 Sincronização com RM</h4>
+              <p>
+                <strong>Método:</strong> ETL para sincronização de dados de
+                colaboradores
+              </p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>Importação de cadastros e biometria facial</li>
+                <li>Identificação de profissionais terceirizados</li>
+                <li>Sincronização incremental automática</li>
+                <li>Validação de integridade de dados</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h4>🏥 Interface com MV Portaria</h4>
+              <p>
+                <strong>Método:</strong> Consulta seletiva para diferenciação de
+                perfis
+              </p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>Distinção entre pacientes e profissionais</li>
+                <li>Consulta de dados quando necessário</li>
+                <li>Manutenção da performance do sistema</li>
+                <li>Compliance com proteção de dados</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h4>☁️ Arquitetura AWS</h4>
+              <p>
+                <strong>Infraestrutura:</strong> Cloud-native com alta
+                disponibilidade
+              </p>
+              <ul style="text-align: left; margin-top: 10px">
+                <li>RDS para banco de dados PostgreSQL</li>
+                <li>EC2 com auto-scaling para aplicação</li>
+                <li>S3 para backup e armazenamento de logs</li>
+                <li>CloudWatch para monitoramento</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <strong>🔄 Estratégia de Migração:</strong>
+            <ul>
+              <li>
+                <strong>Fase Paralela:</strong> Sistema novo funcionará em
+                paralelo com Suricato durante 4 semanas
+              </li>
+              <li>
+                <strong>Piloto Acelerado:</strong> Lançamento com setor de
+                TI/Infraestrutura na semana 12
+              </li>
+              <li>
+                <strong>Rollback Seguro:</strong> Capacidade de retorno ao
+                sistema anterior se necessário
+              </li>
+              <li>
+                <strong>Zero Downtime:</strong> Implementação sem interrupção
+                dos serviços críticos
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🗓️ Cronograma de Implementação (12 Semanas)</h2>
+
+          <div class="highlight-box">
+            <strong>⚡ Abordagem Acelerada:</strong>
+            Cronograma comprimido para 3 meses com foco em funcionalidades
+            essenciais e setor piloto. Expansão completa para todos os setores
+            será planejada como Fase 2 pós-projeto inicial.
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>Semanas 1-2: Sprint de Análise e Planejamento</strong>
+              Mapeamento das APIs do Suricato e RM, definição da arquitetura de
+              integração, setup do ambiente AWS e estruturação das equipes de
+              desenvolvimento
+            </div>
+            <div class="timeline-item">
+              <strong>Semanas 3-6: Desenvolvimento Core e Integração</strong>
+              Desenvolvimento acelerado das APIs de integração, módulos básicos
+              de gestão de contratos, conexão com Suricato/RM e implementação da
+              funcionalidade de controle de jornada
+            </div>
+            <div class="timeline-item">
+              <strong>Semanas 7-9: Funcionalidades Avançadas</strong>
+              Implementação de dashboards, relatórios essenciais, sistema de
+              alertas e migração dos dados históricos críticos
+            </div>
+            <div class="timeline-item">
+              <strong>Semanas 10-11: Testes Intensivos e Homologação</strong>
+              Testes de integração, validação de performance com big data,
+              treinamento da equipe de TI/Infraestrutura e ajustes finais
+              baseados em feedback
+            </div>
+            <div class="timeline-item">
+              <strong>Semana 12: Go-Live com Setor Piloto</strong>
+              Lançamento com setor de TI/Infraestrutura, funcionamento em
+              paralelo com Suricato, monitoramento intensivo e preparação para
+              expansão pós-projeto
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>💰 Benefícios Esperados</h2>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <h4>Redução de Custos Administrativos</h4>
+              <p>
+                Automação significativa de processos manuais, reduzindo
+                retrabalho e aumentando a eficiência operacional
+              </p>
+            </div>
+            <div class="benefit-card">
+              <h4>Redução de Irregularidades</h4>
+              <p>
+                Controle rigoroso de jornada com diminuição expressiva de
+                inconsistências e erros
+              </p>
+            </div>
+            <div class="benefit-card">
+              <h4>Economia Operacional</h4>
+              <p>
+                Otimização de contratos e processos gerando economia substancial
+                nos custos operacionais
+              </p>
+            </div>
+            <div class="benefit-card">
+              <h4>Retorno sobre Investimento</h4>
+              <p>
+                Expectativa de retorno do investimento em curto prazo através
+                dos ganhos de eficiência
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>📈 Métricas de Sucesso</h2>
+
+          <div class="success-metrics">
+            <h4>KPIs e Indicadores de Performance</h4>
+            <div class="kpi-grid">
+              <div class="kpi-item">
+                <strong>Tempo de Processamento</strong>
+                <p>
+                  Redução significativa no tempo de fechamento mensal dos
+                  processos
+                </p>
+              </div>
+              <div class="kpi-item">
+                <strong>Precisão de Dados</strong>
+                <p>
+                  Alta acurácia nos registros de ponto e controle de jornada
+                </p>
+              </div>
+              <div class="kpi-item">
+                <strong>Compliance</strong>
+                <p>
+                  Conformidade total com legislação trabalhista e normas
+                  regulatórias
+                </p>
+              </div>
+              <div class="kpi-item">
+                <strong>Satisfação do Usuário</strong>
+                <p>Alta satisfação dos usuários com a nova plataforma</p>
+              </div>
+              <div class="kpi-item">
+                <strong>Disponibilidade do Sistema</strong>
+                <p>Altíssima disponibilidade e estabilidade do sistema</p>
+              </div>
+              <div class="kpi-item">
+                <strong>Redução de Erros</strong>
+                <p>Diminuição expressiva de erros em cálculos de pagamento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>⚠️ Gestão de Riscos</h2>
+
+          <div class="risk-mitigation">
+            <h4>Principais Riscos e Mitigações</h4>
+            <ul>
+              <li>
+                <strong>Resistência à Mudança:</strong> Programa intensivo de
+                change management e treinamento
+              </li>
+              <li>
+                <strong>Integração com Hardware:</strong> Testes extensivos na
+                fase de homologação
+              </li>
+              <li>
+                <strong>Segurança de Dados:</strong> Implementação de protocolos
+                LGPD e criptografia
+              </li>
+              <li>
+                <strong>Escalabilidade:</strong> Arquitetura cloud-native com
+                auto-scaling
+              </li>
+              <li>
+                <strong>Continuidade de Negócio:</strong> Plano de contingência
+                e backup em tempo real
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🔧 Aspectos Técnicos</h2>
+
+          <h3>Arquitetura Recomendada</h3>
+          <ul>
+            <li>
+              <strong>Frontend:</strong> React.js com interface responsiva e
+              intuitiva
+            </li>
+            <li>
+              <strong>Backend:</strong> Node.js/Python com APIs RESTful seguras
+            </li>
+            <li>
+              <strong>Banco de Dados:</strong> PostgreSQL para dados
+              estruturados
+            </li>
+            <li>
+              <strong>Cloud:</strong> AWS com alta disponibilidade e
+              escalabilidade automática
+            </li>
+            <li>
+              <strong>Integração:</strong> APIs para comunicação com catracas
+              existentes
+            </li>
+            <li>
+              <strong>Segurança:</strong> Autenticação multi-fator e
+              criptografia.
+            </li>
+          </ul>
+
+          <h3>Funcionalidades por Módulo</h3>
+          <ol>
+            <li>
+              <strong>Módulo de Autenticação e Autorização</strong>
+              <ul>
+                <li>Login seguro com diferentes níveis de acesso</li>
+                <li>Integração com Active Directory (se existente)</li>
+                <li>Auditoria completa de acessos</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Módulo de Gestão de Profissionais</strong>
+              <ul>
+                <li>Cadastro completo com foto e biometria</li>
+                <li>Histórico profissional e especialidades</li>
+                <li>Gestão de documentos e certificações</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Módulo de Gestão de Contratos</strong>
+              <ul>
+                <li>Templates por tipo de contrato (hora/dia/mês)</li>
+                <li>Workflow de aprovação e assinatura digital</li>
+                <li>Controle de vigência e renovação automática</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Módulo de Controle de Jornada</strong>
+              <ul>
+                <li>Integração via API REST com sistema Suricato existente</li>
+                <li>Aproveitamento dos 14+ milhões de registros históricos</li>
+                <li>
+                  Sincronização com dados do RM para colaboradores terceirizados
+                </li>
+                <li>Cálculo automático de horas extras baseado em contratos</li>
+                <li>
+                  Gestão de faltas e justificativas com workflow de aprovação
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="section">
+          <h2>👥 Impacto Organizacional</h2>
+
+          <h3>Benefícios Estratégicos</h3>
+          <ul>
+            <li>
+              <strong>Transparência:</strong> Visibilidade completa sobre custos
+              e performance de terceirizados
+            </li>
+            <li>
+              <strong>Compliance:</strong> Redução significativa de riscos
+              trabalhistas e regulatórios
+            </li>
+            <li>
+              <strong>Eficiência:</strong> Automação de processos repetitivos
+              libera recursos para atividades estratégicas
+            </li>
+            <li>
+              <strong>Tomada de Decisão:</strong> Dados precisos para otimização
+              de contratos e negociações
+            </li>
+            <li>
+              <strong>Satisfação:</strong> Maior transparência para
+              profissionais terceirizados
+            </li>
+          </ul>
+
+          <h3>Mudanças nos Processos</h3>
+          <ol>
+            <li>
+              <strong>Recursos Humanos:</strong> Foco na gestão estratégica em
+              vez de controle manual
+            </li>
+            <li>
+              <strong>Financeiro:</strong> Relatórios automáticos e
+              previsibilidade de custos
+            </li>
+            <li>
+              <strong>Operacional:</strong> Monitoramento em tempo real da
+              presença de profissionais
+            </li>
+            <li>
+              <strong>Compliance:</strong> Auditoria contínua e automática
+            </li>
+          </ol>
+        </div>
+
+        <div class="cta-section">
+          <h3>🚀 Próximos Passos</h3>
+          <p>
+            <strong>Recomendação:</strong> Início imediato para garantir
+            implementação em 12 semanas, com setor piloto funcionando e
+            preparação para expansão completa pós-projeto.
+          </p>
+        </div>
+
+        <div class="executive-summary">
+          <h3>📋 Conclusão</h3>
+          <p>
+            Esta transformação digital representa mais que uma modernização
+            tecnológica: é um investimento estratégico na eficiência,
+            transparência e crescimento sustentável da Agir. Com implementação
+            em 12 semanas e retorno esperado em curto prazo, o projeto se
+            posiciona como prioridade máxima para o desenvolvimento
+            organizacional.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
